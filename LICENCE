@@ -1,0 +1,60 @@
+# NinjaApp Commercial License
+
+© [Year] [Your Company Name]. All rights reserved.
+
+---
+
+## 1. License Grant
+This repository, including all source code, binaries, documentation, scripts, resources, and related materials (collectively, "the Software"), is licensed solely for use by authorized developers employed or contracted by [Your Company Name].  
+
+No rights are granted to any other person or entity.
+
+---
+
+## 2. Permitted Use
+Authorized developers may:
+- Use, modify, and build the Software **strictly for the internal development and operation of [Your Company Name]'s products**.  
+- Integrate the Software into the commercial products developed and sold by [Your Company Name].
+
+---
+
+## 3. Prohibited Use
+Except as explicitly permitted above, no person or entity may:
+- Publish, distribute, sell, lease, sublicense, or make the Software publicly available in any form.
+- Share the Software (source code, binaries, or any related files) outside of authorized company personnel.
+- Reverse-engineer, decompile, or otherwise attempt to derive the source code for unauthorized use.
+- Remove or alter any copyright, license, or proprietary notices in the Software.
+
+---
+
+## 4. Confidentiality
+The Software and all related materials are **confidential and proprietary** to [Your Company Name].  
+All authorized developers must maintain strict confidentiality and may only access the Software in accordance with company policies.
+
+---
+
+## 5. Ownership
+[Your Company Name] retains all ownership, intellectual property rights, and title to the Software, including all modifications or derivative works created by authorized developers.
+
+---
+
+## 6. Warranty Disclaimer
+The Software is provided "as-is" without any express or implied warranties. [Your Company Name] is not liable for any damages arising from use or inability to use the Software, except as required by law.
+
+---
+
+## 7. Termination
+This license is automatically terminated if the user:
+- Is no longer an authorized developer of [Your Company Name].
+- Violates any provision of this license.
+
+Upon termination, the user must immediately cease all use of the Software and delete all copies in their possession.
+
+---
+
+## 8. Governing Law
+This license is governed by and interpreted in accordance with the laws of [Your Jurisdiction/Country].
+
+---
+
+**By accessing or using this Software, you agree to be bound by the terms of this License.**
