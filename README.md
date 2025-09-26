@@ -1,2 +1,5 @@
-# ninja-crypter
-The encryption software made specifically for the ninja series commercial software
+# Ninja Software Series
+
+### Ninja Crypter
+
+The encryption software made specifically for the ninja series commercial software.
