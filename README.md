@@ -13,3 +13,7 @@ This encryption software is developed exclusively for the Ninja Series commercia
 All content in this repository is intended solely for commercial use and is not an open-source project.
 
 No part of this repository—including source code, binaries, or other files—may be published, shared, or made publicly available under any circumstances.
+
+
+
+> Encrypted files should use the .nj
