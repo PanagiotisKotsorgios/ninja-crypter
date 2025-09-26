@@ -16,4 +16,4 @@ No part of this repository—including source code, binaries, or other files—m
 
 
 
-> Encrypted files should use the .nj
+> Encrypted files should use the official file format of the application `.nj` .
