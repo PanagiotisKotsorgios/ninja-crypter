@@ -1,7 +1,7 @@
-# NinjaApp Repository Code of Conduct
+# Ninja Crypter Repository Code of Conduct
 
 ## 1. Purpose
-The purpose of this Code of Conduct is to ensure a **professional, respectful, and secure environment** for all authorized developers working on the NinjaApp repository. This repository is **private and commercial**, and access is limited to employees or contractors of [Your Company Name].
+The purpose of this Code of Conduct is to ensure a **professional, respectful, and secure environment** for all authorized developers working on the Ninja Crypter repository. This repository is **private and commercial**, and access is limited to employees or contractors of [AGROTECH I.K.E.].
 
 All contributors are expected to follow these guidelines to maintain the integrity and confidentiality of the project.
 
@@ -58,4 +58,4 @@ By accessing and contributing to this repository, you acknowledge that you have 
 ---
 
 **Confidentiality Reminder:**  
-This repository is **strictly for internal use by [Your Company Name]**. Do not share any content, files, or information outside the authorized development team.
+This repository is **strictly for internal use by [AGROTECH I.K.E.]**. Do not share any content, files, or information outside the authorized development team.
