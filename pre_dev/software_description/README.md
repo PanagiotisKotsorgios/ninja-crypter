@@ -6,7 +6,7 @@
 
 - GUI (cross-platform, JavaFX recommended)
 - CLI for automation and scripting
-- Programmatic APIs
+- Programmatic APIs / Java SDK
 - Enterprise key management
 - Secure file sharing
 - Auditability
@@ -106,40 +106,133 @@
 
 ---
 
-## 6. Functional Modules
+## 6. Core Application Features (Detailed)
 
-**Core Modules and Responsibilities:**
+### A. File Encryption / Decryption
 
-- **GUI**: Wizards, menus, key management interface, audit viewer
-- **CLI**: Command-line equivalents for encrypt, decrypt, share, rotate keys
-- **Core Engine**: File encryption/decryption, streaming, AEAD
-- **Crypto**: Symmetric/asymmetric primitives, hashing, signing
-- **Key Management**: Master/Data key lifecycle, wrapping/unwrapping, rotation
-- **Sharing**: User-based sharing, expiration, revocation
-- **Network**: Optional telemetry, online policy enforcement
-- **Utilities**: Logging, error handling, metadata parsing
+- **Encrypt File (single file)**  
+  - Encrypts any file type (text/binary) → outputs `.ninja` or `.enc` package  
+  - Includes authenticated metadata: algorithm, version, original name (optional encrypted), timestamp, file hash, signer info  
 
----
+- **Encrypt Directory**  
+  - Recursive encryption with preserved folder structure  
 
-## 7. Testing & Compliance
+- **Decrypt File / Directory**  
+  - Requires valid unwrapping keys  
 
-- **Unit Tests**: Crypto primitives, file format, API coverage
-- **Integration Tests**: Key management, KMS/HSM, multi-file scenarios
-- **Fuzz Testing**: Malformed input files, headers, truncated data
-- **Crypto Regression Tests**: Ensure cross-compatibility and AEAD correctness
-- **Compliance**: Optional FIPS mode, secure code practices, secure update verification
+- **Streaming Support**  
+  - Chunked AEAD with sequence numbers for very large files  
+  - Optional partial decrypt for requested ranges  
+
+- **Secure Wipe**  
+  - Configurable overwrite policy for originals after encryption  
 
 ---
 
-## 8. Summary
+### B. File Format
 
-Ninja Crypter is designed as a **secure, enterprise-ready encryption platform** with:
+- Containerized format:  
+  `Header + Metadata + Encrypted Data + Auth Tag + Optional Signature`  
+- Versioned for algorithm upgrades  
+- Support for multiple recipients (each with wrapped DK entry)  
 
-- Strong, modern cryptography
-- Comprehensive key management
-- GUI + CLI + programmatic access
-- Enterprise sharing, audit, and revocation features
-- Offline and online operational modes
-- Full testing, compliance, and secure development lifecycle
+---
 
-This document serves as the **full application analysis** for developers, security auditors, and project leads.
+### C. Sharing & Access Control
+
+- Share files to users by wrapping DK with recipient public key(s)  
+- Expiration: enforce time-limited access  
+- Revocation: support immediate revocation (online)  
+- Access tokens: short-lived tokens for authenticated online decryption  
+
+---
+
+### D. Authentication & Authorization
+
+- Local OS user authentication  
+- Optional corporate SSO (SAML / OIDC)  
+- Multi-factor authentication for sensitive operations  
+- RBAC for file operations and key management  
+
+---
+
+### E. GUI Features (JavaFX recommended)
+
+- **Main Window**  
+  - Drag & drop for files/folders  
+  - Quick actions: Encrypt, Decrypt, Share, Verify, Settings  
+
+- **Wizard Flows**  
+  - Encrypt wizard: select files → recipients / password → algorithm → advanced → execute  
+  - Decrypt wizard: detect available keys → show metadata → decrypt  
+
+- **Key Manager UI**  
+  - List keys, import/export, request from KMS, rotation interface  
+
+- **Activity / Audit Log Viewer**  
+  - Local + server-side logs (filterable)  
+
+- **Policy / Settings**  
+  - Default algorithms, overwrite policy, retention, telemetry opt-in  
+
+- **Dialogs**  
+  - Error & warning dialogs, Help & Docs integration  
+
+---
+
+### F. CLI Features
+
+- Example commands:
+
+```bash
+ninja encrypt -i in -o out --recipients user1,user2 --alg AES-GCM --chunked
+ninja decrypt -i file --output-dir dir
+ninja share --file file --user user@company.com --expire 2026-01-01
+ninja key rotate --master-key-id id
+ninja audit --since "2025-01-01" --format json
+```
+Scripting-friendly: exit codes, machine-readable output
+
+G. API & SDK
+
+Java SDK Classes (examples)
+
+```java
+Encryptor.encrypt(File file, EncryptionOptions options);
+Decryptor.decrypt(File file, KeyProvider keyProvider);
+KeyManager.wrapKey(DataKey dk, RecipientPublicKey pk);
+KeyManager.rotateMasterKey(String masterKeyId);
+AuditLogger.query(LocalDate since, Format format);
+
+```
+
+
+Support for internal REST endpoints for policy/telemetry
+
+
+7. Testing & Compliance
+
+Unit, integration, fuzzing, crypto regression tests
+
+CI/CD integration for automated testing
+
+Optional FIPS / compliance mode
+
+Secure updates & code signing verification
+
+8. Summary
+
+Ninja Crypter is designed as a secure, enterprise-ready encryption platform with:
+
+Strong, modern cryptography
+
+Comprehensive key management
+
+GUI + CLI + programmatic access
+
+Enterprise sharing, audit, and revocation features
+
+Offline and online operational modes
+
+Full testing, compliance, and secure development lifecycle
+
