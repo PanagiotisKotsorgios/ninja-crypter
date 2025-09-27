@@ -1,3 +1,17 @@
+# Ninja Crypter — Project Overview
+
+**Ninja Crypter** is a high-security, enterprise-grade file encryption software currently in **pre-development**. It is designed to protect sensitive company data across multiple platforms and operating systems, including Windows, macOS, and Linux, and will be implemented in **Java** for maximum portability and maintainability. The software will provide comprehensive capabilities to encrypt and decrypt all types of files, including text, binary, and large datasets, ensuring confidentiality, integrity, and authenticity even if files are intercepted, exfiltrated, or compromised.  
+
+The application will support multiple **modern cryptographic algorithms** such as AES-256-GCM, XChaCha20-Poly1305 for symmetric encryption, RSA-OAEP and ECIES for asymmetric key wrapping, as well as authenticated signing using Ed25519 or RSA-PSS. Each file will use a **unique data key**, securely managed and wrapped by a **master key** stored in a Hardware Security Module (HSM) or enterprise Key Management System (KMS) such as HashiCorp Vault, AWS KMS, or Azure Key Vault.  
+
+Ninja Crypter will include both a **graphical user interface (GUI)**, designed with JavaFX for cross-platform usability, and a **command-line interface (CLI)** for automation and scripting. Additionally, a **Java SDK** will provide programmatic access to encryption, decryption, key management, and audit functionality. Users will be able to perform secure file sharing with access control, expiration, and revocation policies, while all operations are **logged for auditing** and **tamper detection**.  
+
+Other enterprise-focused features will include **key rotation, offline and online operational modes, batch encryption, streaming support for very large files, secure wipe of originals, compliance options (FIPS), configurable policies, telemetry, and optional corporate SSO or multi-factor authentication**. Ninja Crypter aims to serve as a **complete, secure, and auditable solution** for protecting top-secret company files and critical data, ensuring that sensitive information remains inaccessible to unauthorized parties under any circumstances.  
+
+As the project is currently in pre-development, the design and architecture are being finalized to incorporate **best-practice cryptography, modern software engineering standards, and enterprise-grade security policies** to ensure the final product meets the highest levels of security, usability, and maintainability.
+
+
+
 # Ninja Crypter — Application Analysis
 
 ## 1. Overview
